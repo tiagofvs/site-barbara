@@ -408,11 +408,71 @@
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
         }
 
-        /* --- RESPONSIVE --- */
+		/* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplificado para mobile */
+            
+            /* 1. Ajuste Geral de Espaçamentos */
+            .section-padding { padding: 40px 0; } /* Reduz de 80px para 40px */
+            .container { padding: 0 25px; } /* Mais margem lateral para não colar na borda */
+
+            /* 2. Cabeçalho (Header) */
+            nav {
+                flex-direction: column; /* Coloca logo em cima e botão embaixo */
+                gap: 15px;
+            }
+            .nav-links { display: none; } /* Mantém escondido no mobile */
+            .logo a { font-size: 1.1rem; } /* Diminui um pouco a logo */
+
+            /* 3. Hero (Capa) */
+            .hero {
+                height: auto; /* Remove altura fixa de 100vh para não bugar com barra do navegador */
+                min-height: 500px; /* Garante uma altura mínima digna */
+                padding: 120px 0 60px; /* Dá espaço para o header fixo */
+                background-attachment: scroll; /* Melhora performance no scroll do celular */
+            }
+            .hero-content {
+                padding: 30px 20px; /* Reduz padding da caixa de vidro */
+            }
+            .hero-content h1 { 
+                font-size: 1.8rem; /* Reduz drasticamente o título */
+            }
+            .hero-content p { 
+                font-size: 1rem; 
+            }
+
+            /* 4. Títulos das Seções */
+            .section-title { margin-bottom: 30px; }
+            .section-title h2 { font-size: 1.6rem; }
+            h2 { font-size: 1.5rem; }
+
+            /* 5. Seção Sobre (Empilhar) */
+            .about-grid { 
+                grid-template-columns: 1fr; /* Uma coluna só */
+                gap: 30px;
+                text-align: center; /* Centraliza texto no mobile */
+            }
+            .about-img img {
+                max-width: 80%; /* Imagem não ocupa a tela toda, fica mais delicada */
+                margin: 0 auto; /* Centraliza a imagem */
+            }
+            
+            /* 6. Serviços */
+            .services-grid {
+                /* Ajusta para telas pequenas não quebrarem o grid */
+                grid-template-columns: 1fr; 
+            }
+            .service-card { padding: 20px; }
+            
+            /* 7. Footer e Outros */
+            .floating-buttons {
+                right: 20px;
+                bottom: 20px;
+            }
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
         }
     </style>
 	
